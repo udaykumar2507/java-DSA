@@ -1,0 +1,15 @@
+import java.math.BigInteger;
+class Solution {
+    public String kthLargestNumber(String[] nums, int k) {
+        PriorityQueue<BigInteger>minheap=new PriorityQueue<>();
+        for (int i=0;i<nums.length;i++){
+            BigInteger num=new BigInteger(nums[i]);
+            minheap.add(num);
+            if (minheap.size()>k){
+                minheap.poll();
+            }
+        }
+        return (minheap.peek().toString());
+    }
+    
+}
