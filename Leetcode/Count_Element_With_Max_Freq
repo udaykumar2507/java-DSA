@@ -1,0 +1,24 @@
+class Solution {
+    public int maxFrequencyElements(int[] nums) {
+        int hasharr[]=new int[101];
+        for (int it:nums){
+            hasharr[it]++;
+        }
+        int max=Integer.MIN_VALUE;
+        int ind=-1;
+        for (int i=0;i<hasharr.length;i++){
+            if (hasharr[i]>=max){
+                max=hasharr[i];
+            }
+        }
+        int cnt=0;
+        for (int i=0;i<hasharr.length;i++){
+            if (hasharr[i]==max){
+                cnt+=hasharr[i];
+            }
+        }
+        return cnt;
+       
+        
+    }
+}
